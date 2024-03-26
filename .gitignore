@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 
+*module.scss
+*.css.map
 # testing
 /coverage
 
