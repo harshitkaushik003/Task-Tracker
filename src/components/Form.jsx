@@ -34,6 +34,7 @@ const Form = () => {
 
   return (
     <div className={styles.Form}>
+        
         <div className={styles.left}>
             <input type="text" placeholder='Enter Task Name...' ref={nameRef} required/>
             <textarea name="" id="" cols="30" rows="10" placeholder='Enter Description' ref={descRef} required></textarea>
