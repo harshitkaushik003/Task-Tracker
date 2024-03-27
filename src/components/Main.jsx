@@ -21,8 +21,7 @@ const Main = () => {
         <div className={styles.tasks}>
           
             {status.map(item=>(
-              <Card status={item}/>
-              
+              <Card status={item} />
             ))}
         </div>
     </div>
