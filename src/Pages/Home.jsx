@@ -2,6 +2,7 @@ import React from 'react'
 import styles from "../styles/Home/Home.module.css";
 import myImage from "../images/filter.png";
 import Main from "../components/Main";
+import { Outlet } from 'react-router-dom';
 const Home = () => {
   return (
     <div className={styles.home}>
@@ -15,6 +16,7 @@ const Home = () => {
         </div>
         <div className={styles.right}>
             <Main/>
+            <Outlet/>
         </div>
     </div>
   )

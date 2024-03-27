@@ -1,0 +1,55 @@
+.form {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #f7f6f2;
+  border-radius: 20px;
+  transform: scale(0);
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+.form .btns {
+  width: 100%;
+  height: 5%;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  background-color: #A7E8BD;
+  position: relative;
+}
+.form .btns .close {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #fc5c58;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form .btns .close img {
+  width: 70%;
+  height: 70%;
+  visibility: hidden;
+}
+.form .btns .close:hover img {
+  visibility: visible;
+}
+.form .btns span {
+  position: absolute;
+  right: 20px;
+  top: 4px;
+}
+.form .formMain {
+  width: 100%;
+  height: 85%;
+  display: flex;
+}
+.form .submit {
+  width: 100%;
+  height: 15%;
+}/*# sourceMappingURL=TaskForm.module.css.map */
