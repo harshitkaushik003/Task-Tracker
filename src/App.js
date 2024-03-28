@@ -4,6 +4,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import TaskForm from "./Pages/TaskForm";
 import { Provider } from "react-redux";
 import { store } from "./Redux/store";
+import Handle from "./Pages/Handle";
 
 function App() {
   const router = createBrowserRouter([
@@ -11,7 +12,8 @@ function App() {
       path: "/",
       element: <Home/>,
       children:[
-        {path: '/add', element: <TaskForm/>}
+        {path: '/add', element: <TaskForm/>},
+        {path: '/task/:type/:id', element: <Handle/>}
       ]
     }
   ])

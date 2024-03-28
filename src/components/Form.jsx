@@ -18,13 +18,24 @@ const Form = () => {
     }
 
     const handleSubmit = ()=>{
+        
+        const currentDate = new Date();
+        const year = currentDate.getFullYear();
+        const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+        const day = String(currentDate.getDate()).padStart(2, '0');
+
+        const formattedDate = `${year}-${month}-${day}`;
+        
+        const ID = (Date.now()).toString();
+        
         const task = {
+            id: ID,
             name: nameRef.current.value,
             desc: descRef.current.value,
             assignee: anameRef.current.value,
             priority: pref.current.value,
             status: 'pending',
-            startDate: new Date(),
+            startDate: formattedDate,
             endDate: null,
         }
         console.log(task);

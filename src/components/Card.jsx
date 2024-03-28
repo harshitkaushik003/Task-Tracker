@@ -19,7 +19,7 @@ const Card = ({status}) => {
         </div>
         <div className={styles.main}>
           {filteredTasks.map(item=>(
-            <Task task={item}/>
+            <Task task={item} color={status.color}/>
           ))}
         </div>
     </div>

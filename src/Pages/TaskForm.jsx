@@ -3,6 +3,7 @@ import styles from "../styles/TaskForm/TaskForm.module.css";
 import cross from "../images/cross.png";
 import { useNavigate } from 'react-router-dom';
 import Form from '../components/Form';
+import Bar from '../components/Bar';
 const TaskForm = () => {
     const [style, setStyle] = useState({});
     const navigate = useNavigate();
@@ -19,12 +20,7 @@ const TaskForm = () => {
     }
   return (
     <div className={styles.form} style={style}>
-        <div className={styles.btns}> 
-            <div className={styles.close} onClick={handleBack}>
-                <img src={cross} alt="" />
-            </div>
-            <span>Add Task</span>
-        </div>
+        <Bar handleBack={handleBack} title={"Add Task"}/>
         <div className={styles.formMain}>
             <Form/>
         </div>
