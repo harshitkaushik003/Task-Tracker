@@ -2,7 +2,7 @@
 .task {
   width: 90%;
   min-height: 40%;
-  background-color: white;
+  background-color: #F2F7F2;
   margin: 4px;
   border-radius: 10px;
   display: flex;
@@ -18,13 +18,13 @@
   font-family: "Mate SC", serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 30px;
+  font-size: 20px;
 }
 .task .text span.aname {
   font-family: "Crimson Text", serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 20px;
+  font-size: 16px;
 }
 .task .text span.date {
   margin-top: 10px;

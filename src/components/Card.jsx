@@ -11,7 +11,7 @@ const Card = ({status}) => {
 
     const {tasks} = useSelector(taskSelector);
     const filteredTasks = tasks.filter(task => task.status === status.name.toLowerCase());
-    console.log(filteredTasks);
+    
   return (
     <div className={styles.card} style={style}>   
         <div className={styles.heading} style={{borderBottom: `1px solid ${status.color}`}}>
