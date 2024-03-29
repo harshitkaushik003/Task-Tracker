@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    tasks: []
+    tasks: [],
+    filteredTask: []
 }
 
 const taskSlice = createSlice({
@@ -10,6 +11,7 @@ const taskSlice = createSlice({
     reducers: {
         add: (state, action)=>{
             state.tasks.push(action.payload);
+            
         },
         edit: (state, action)=>{
             const {id, priority, status} = action.payload;
@@ -41,6 +43,20 @@ const taskSlice = createSlice({
         },
         delete: (state, action)=>{
             state.tasks = state.tasks.filter(task => task.id !== action.payload);
+        },
+        filterTask: (state, action)=>{
+            const {assigneeName, priority, startDate, endDate} = action.payload;
+            state.filteredTask = state.tasks.filter(task => {
+                const assigneeMatch = (assigneeName ) ? task.assignee === assigneeName : true;
+                const priorityMatch = (priority) ? task.priority === priority : true;
+                const startDateMatch = (startDate) ? task.startDate === startDate : true;
+                const endDateMatch = (endDate) ? task.endDate === endDate : true;
+
+                return assigneeMatch && priorityMatch && startDateMatch && endDateMatch;
+            });
+        },
+        resetFilter : (state, action)=>{
+            state.filteredTask = [...state.tasks];
         }
         
     }

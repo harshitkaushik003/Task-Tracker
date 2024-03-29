@@ -27,6 +27,7 @@ const Edit = ({ task, handleBack }) => {
         status: sRef.current.value
     }
     dispatch(actions.edit(data));
+    dispatch(actions.resetFilter());
     handleBack();
     
   }

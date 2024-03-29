@@ -1,16 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from "../styles/Card/Card.module.css";
-import { useSelector } from 'react-redux';
-import { taskSelector } from '../Redux/taskReducer';
+import { useDispatch, useSelector } from 'react-redux';
+import { actions, taskSelector } from '../Redux/taskReducer';
 import Task from './Task';
 const Card = ({status}) => {
     const style = {
         boxShadow: `4px 4px ${status.color}`,
         
     }
-
-    const {tasks} = useSelector(taskSelector);
-    const filteredTasks = tasks.filter(task => task.status === status.name.toLowerCase());
+    const {filteredTask} = useSelector(taskSelector);
+    
+    const filteredTasks = filteredTask.filter(task => task.status === status.name.toLowerCase());
     
   return (
     <div className={styles.card} style={style}>   

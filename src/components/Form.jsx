@@ -41,6 +41,7 @@ const Form = () => {
         console.log(task);
         resetForm();
         dispatch(actions.add(task));
+        dispatch(actions.resetFilter());
     }
 
   return (
