@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import { taskSelector } from '../Redux/taskReducer';
 import View from '../components/View';
 import Edit from '../components/Edit';
+import Delete from '../components/Delete';
 const Handle = () => {
 
     const [style, setStyle] = useState({})
@@ -36,7 +37,9 @@ const Handle = () => {
     <div className={styles.main} style={style}>
         <Bar handleBack={handleBack} title={type}/>
         <div className={styles.content}>
-            {(type === "view") ? <View task={currentTask}/> : <Edit task={currentTask} handleBack={handleBack}/>}
+            {(type === "view") ? <View task={currentTask}/> :
+            (type==="edit") ? <Edit task={currentTask} handleBack={handleBack}/>
+            :<Delete task={currentTask} handleBack={handleBack}/>}
         </div>
     </div>
   )
