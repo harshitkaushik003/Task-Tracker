@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styles from "../styles/TaskForm/TaskForm.module.css";
-import cross from "../images/cross.png";
+
 import { useNavigate } from 'react-router-dom';
 import Form from '../components/Form';
 import Bar from '../components/Bar';

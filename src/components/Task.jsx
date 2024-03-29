@@ -12,7 +12,8 @@ const Task = ({task}) => {
         <div className={styles.text}>
           <span className={styles.taskName}>{task.name}</span>
           <span className={styles.aname}>{task.assignee}</span>
-          <span className={styles.date}>{task.startDate}</span>
+          <span className={styles.date}>Start: {task.startDate}</span>
+          <span className={styles.date}>{(task.endDate !== null) ? `End : ${task.endDate}` : ""}</span>
           <span className={styles.priority}>{task.priority}</span>
         </div>
         <div className={styles.btns}>

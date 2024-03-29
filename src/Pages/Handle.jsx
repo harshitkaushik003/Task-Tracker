@@ -7,10 +7,12 @@ import Bar from '../components/Bar';
 import { useSelector } from 'react-redux';
 import { taskSelector } from '../Redux/taskReducer';
 import View from '../components/View';
+import Edit from '../components/Edit';
 const Handle = () => {
 
     const [style, setStyle] = useState({})
     const {type, id} = useParams();
+    
     const navigate = useNavigate();
     
     const {tasks} = useSelector(taskSelector);
@@ -34,7 +36,7 @@ const Handle = () => {
     <div className={styles.main} style={style}>
         <Bar handleBack={handleBack} title={type}/>
         <div className={styles.content}>
-            {(type === "view") ? <View task={currentTask}/> : ''}
+            {(type === "view") ? <View task={currentTask}/> : <Edit task={currentTask} handleBack={handleBack}/>}
         </div>
     </div>
   )
