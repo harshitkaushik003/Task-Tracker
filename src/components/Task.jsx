@@ -22,11 +22,16 @@ const Task = ({task}) => {
               <img src={view} alt="" />
             </Link>
           </div>
-          <div className={styles.taskbtns}>
-            <Link className="link" to={`task/delete/${task.id}`}>
-              <img src={del} alt="" />
-            </Link>
-          </div>
+          
+            {(task.status !== 'completed') ? 
+              <div className={styles.taskbtns}>
+                <Link className="link" to={`task/delete/${task.id}`}>
+                  <img src={del} alt="" />
+                </Link>
+              </div>
+              : ''
+            }
+          
           <div className={styles.taskbtns}>
             <Link className="link" to={`task/edit/${task.id}`}>
               <img src={edit} alt="" />
