@@ -13,13 +13,14 @@ const Main = () => {
                 <span>TaskMaster</span>
             </div>
             <div className={styles.addTask}>
+              {/*link to add tasks*/}
               <Link className='link' to={"/add"}>
                 <Button text={"Add Task"}/>
               </Link>
             </div>
         </div>
         <div className={styles.tasks}>
-          
+            {/* columns for each status */}
             {status.map(item=>(
               <Card status={item} />
             ))}

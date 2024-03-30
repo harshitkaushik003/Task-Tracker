@@ -25,8 +25,9 @@ const Handle = () => {
         setStyle({transform: "scale(1)"});
     }, [])
 
+    //function to redirect back to '/'
     function handleBack(){
-        setStyle({transform: "scale(0)"});
+        setStyle({transform: "scale(0)"}); //for the open and close animation
         setTimeout(()=>{
             navigate('/');    
         }, 100)

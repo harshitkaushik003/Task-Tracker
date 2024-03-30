@@ -1,11 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    tasks: [],
-    filteredTask: []
+    tasks: [], //main tasks array
+    filteredTask: [] //array in which filtered tasks will be stored
 }
 
-
+//function for parsing start date and end date to compare in sort 
+//the dates are strings so have to change it into date
 const parseDate = (dateString) => {
     const [day, month, year] = dateString.split('-').map(Number);
     return new Date(year, month - 1, day); // Month is zero-based
@@ -15,10 +16,12 @@ const taskSlice = createSlice({
     name: 'task',
     initialState: initialState,
     reducers: {
+        //adding task into state
         add: (state, action)=>{
             state.tasks.push(action.payload);
             
         },
+        //editing the tasks
         edit: (state, action)=>{
             const {id, priority, status} = action.payload;
             const index = state.tasks.findIndex(task=>task.id === id);
@@ -29,7 +32,7 @@ const taskSlice = createSlice({
                 currentTask.priority = priority;
                 currentTask.status = status;
 
-
+                //removing end date if the task status becomes pending or in progress
                 if(status !== 'pending' && status !== 'in progress'){
                     const currentDate = new Date();
                     const year = currentDate.getFullYear();
@@ -47,9 +50,11 @@ const taskSlice = createSlice({
             }
 
         },
+        //deleting the task
         delete: (state, action)=>{
             state.tasks = state.tasks.filter(task => task.id !== action.payload);
         },
+        //filtering the tasks based on the filters
         filterTask: (state, action)=>{
             const {assigneeName, priority, startDate, endDate} = action.payload;
             state.filteredTask = state.tasks.filter(task => {
@@ -61,9 +66,12 @@ const taskSlice = createSlice({
                 return assigneeMatch && priorityMatch && startDateMatch && endDateMatch;
             });
         },
+        //reseting filters array when no filters are applied / new tasks are added/edited
         resetFilter : (state, action)=>{
             state.filteredTask = [...state.tasks];
         },
+
+        //sorting tasks
         sortTask: (state,action)=>{
             const {property} = action.payload;
             state.tasks.sort((a,b)=>{

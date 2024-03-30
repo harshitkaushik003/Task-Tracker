@@ -4,12 +4,12 @@ import { useDispatch } from 'react-redux';
 import { actions } from '../Redux/taskReducer';
 
 const Edit = ({ task, handleBack }) => {
-  // Initialize priority state
+  // Initializing priority state
   const [priority, setPriority] = useState('');
   const [status, setStatus] = useState('');
 
   const dispatch = useDispatch();
-  // Update priority state when task changes
+  // Updating priority state when task changes
   useEffect(() => {
     if (task && task.priority && task.status) {
       setPriority(task.priority);
@@ -20,6 +20,7 @@ const Edit = ({ task, handleBack }) => {
   const pRef = useRef()
   const sRef = useRef()
 
+  //dispatching actions to edit task
   const handleSubmit = ()=>{
     const data = {
         id: task.id,
@@ -28,7 +29,7 @@ const Edit = ({ task, handleBack }) => {
     }
     dispatch(actions.edit(data));
     dispatch(actions.resetFilter());
-    handleBack();
+    handleBack(); //this function redirects to '/'
     
   }
 

@@ -19,6 +19,7 @@ const Form = () => {
 
     const handleSubmit = ()=>{
         
+        //converting date to string 
         const currentDate = new Date();
         const year = currentDate.getFullYear();
         const month = String(currentDate.getMonth() + 1).padStart(2, '0');
@@ -28,6 +29,7 @@ const Form = () => {
         
         const ID = (Date.now()).toString();
         
+        //creating task object
         const task = {
             id: ID,
             name: nameRef.current.value,
@@ -38,10 +40,10 @@ const Form = () => {
             startDate: formattedDate,
             endDate: null,
         }
-        console.log(task);
+        
         resetForm();
-        dispatch(actions.add(task));
-        dispatch(actions.resetFilter());
+        dispatch(actions.add(task)); //action to add task
+        dispatch(actions.resetFilter()); //reseting the filtered array to include currently added element
     }
 
   return (
@@ -54,14 +56,6 @@ const Form = () => {
         <div className={styles.right}>
             <label htmlFor="aname">Enter Assignee Name</label>
             <input type="text" name='aname' placeholder='Full Name' ref={anameRef} required/>
-            {/* <label htmlFor="status">Status</label>
-            <select name="status" id={styles.status} className={styles.dropdown}>
-                <option value="pending">Pending</option>
-                <option value="in-progress">In Progress</option>
-                <option value="pending">Completed</option>
-                <option value="pending">Deployed</option>
-                <option value="pending">Deferred</option>
-            </select> */}
 
             <label htmlFor="priority">Priority</label>
             <select name="priority" id={styles.priority} className={styles.dropdown} ref={pref}>

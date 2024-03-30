@@ -4,6 +4,8 @@ import myImage from "../images/filter.png";
 import Main from "../components/Main";
 import { Outlet } from 'react-router-dom';
 import Filters from '../components/Filters';
+
+
 const Home = () => {
   return (
     <div className={styles.home}>

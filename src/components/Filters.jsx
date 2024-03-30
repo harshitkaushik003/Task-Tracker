@@ -13,7 +13,7 @@ const Filters = () => {
   const dispatch = useDispatch();
 
 
-
+  //references for the inputs
   const aRef = useRef(null);
   const pRef = useRef(null);
   const sdRef = useRef(null);
@@ -21,6 +21,7 @@ const Filters = () => {
 
   const sortRef = useRef(null);
 
+  //dispatching action to filter the tasks
   function handleChange(){
     const filterCriteria = {
       assigneeName : (aRef && aRef !== '') ? aRef.current.value : null,
@@ -32,6 +33,7 @@ const Filters = () => {
     dispatch(actions.filterTask(filterCriteria));
   }
 
+  //This function resets the filters when reset filter button is clicked
   function handleReset(){
     aRef.current.value = null;
     pRef.current.value = null;
@@ -41,6 +43,7 @@ const Filters = () => {
     dispatch(actions.resetFilter());
   }
 
+  //dispatching sort action
   function handleSort(){
     dispatch(actions.sortTask({property: sortRef.current.value}));
     dispatch(actions.resetFilter());

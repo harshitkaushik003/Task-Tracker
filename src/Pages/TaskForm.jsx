@@ -4,9 +4,13 @@ import styles from "../styles/TaskForm/TaskForm.module.css";
 import { useNavigate } from 'react-router-dom';
 import Form from '../components/Form';
 import Bar from '../components/Bar';
+
 const TaskForm = () => {
     const [style, setStyle] = useState({});
     const navigate = useNavigate();
+
+    //for opening and closing animations
+    //when component is loaded, scale it to 1 
     useEffect(()=>{
         setStyle({transform: "scale(1)"});
 
