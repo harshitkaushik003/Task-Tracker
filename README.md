@@ -6,7 +6,7 @@ Task Master App is a ReactJs application which allows users to add tasks and han
 
 # Starting with the app
 
-1 -> run `npm install` to install all the scripts \
+1 -> run `npm install` to install all the packages as zip file will not contain node_modules \
 2 -> run `npm start` to run the app in the local server 
 
 # Features
