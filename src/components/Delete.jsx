@@ -8,6 +8,7 @@ const Delete = ({task, handleBack}) => {
 
     function handleSubmit(){
         dispatch(actions.delete(task.id));
+        dispatch(actions.resetFilter());
         handleBack();
     }
   return (

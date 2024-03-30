@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import styles from "../styles/Filters/Filter.module.css";
 
 import 'react-date-range/dist/styles.css'; 
@@ -19,6 +19,7 @@ const Filters = () => {
   const sdRef = useRef(null);
   const edRef = useRef(null);
 
+  const sortRef = useRef(null);
 
   function handleChange(){
     const filterCriteria = {
@@ -40,6 +41,11 @@ const Filters = () => {
     dispatch(actions.resetFilter());
   }
 
+  function handleSort(){
+    dispatch(actions.sortTask({property: sortRef.current.value}));
+    dispatch(actions.resetFilter());
+  }
+
   return (
     <div className={styles.main}>
       <div className={styles.filters}>
@@ -49,7 +55,7 @@ const Filters = () => {
         <div className={styles.filtersMain}>
             <input ref={aRef} type="text" placeholder='Asignee name' onChange={handleChange}/>
             <select ref={pRef} name="priority" id="" onChange={handleChange}>
-                <option value='' disabled>Priority</option>
+                <option value={null} disabled selected>Priority</option>
                 <option value="p0">P0</option>
                 <option value="p1">P1</option>
                 <option value="p2">P2</option>
@@ -62,7 +68,15 @@ const Filters = () => {
             <button onClick={handleReset}>Reset Filters</button>
         </div>
       </div>
-      <div className={styles.sort}></div>
+      <div className={styles.sort}>
+        <label htmlFor="sort">Sort By:</label>
+        <select ref={sortRef} name="sort" id="sort" onChange={handleSort}>
+          <option value={null} disabled selected>options</option>
+          <option value="priority">Priority</option>
+          <option value="startDate">Start Date</option>
+          <option value="endDate">End Date</option>
+        </select>
+      </div>
     </div>
   )
 }

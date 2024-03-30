@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styles from "../styles/Card/Card.module.css";
-import { useDispatch, useSelector } from 'react-redux';
-import { actions, taskSelector } from '../Redux/taskReducer';
+import { useSelector } from 'react-redux';
+import {taskSelector } from '../Redux/taskReducer';
 import Task from './Task';
 const Card = ({status}) => {
     const style = {

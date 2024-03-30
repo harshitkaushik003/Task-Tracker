@@ -5,6 +5,12 @@ const initialState = {
     filteredTask: []
 }
 
+
+const parseDate = (dateString) => {
+    const [day, month, year] = dateString.split('-').map(Number);
+    return new Date(year, month - 1, day); // Month is zero-based
+};
+
 const taskSlice = createSlice({
     name: 'task',
     initialState: initialState,
@@ -57,6 +63,23 @@ const taskSlice = createSlice({
         },
         resetFilter : (state, action)=>{
             state.filteredTask = [...state.tasks];
+        },
+        sortTask: (state,action)=>{
+            const {property} = action.payload;
+            state.tasks.sort((a,b)=>{
+                if(property === 'priority'){
+                    const priorityOrder = {'p0': 0, 'p1': 1, 'p2': 2};
+                    return priorityOrder[a[property]] - priorityOrder[b[property]];
+                }else if(property === 'startDate' || property === 'endDate'){
+                    if(property === null){
+                        return 0;
+                    }
+                    const dateA = parseDate(a[property]);
+                    const dateB = parseDate(b[property]);
+                    return dateA - dateB
+                }
+                return 0;
+            })
         }
         
     }
