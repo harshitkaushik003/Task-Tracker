@@ -52,4 +52,21 @@
   position: relative;
   left: 40px;
   top: 2px;
+}
+
+@media screen and (max-width: 600px) {
+  .main .filters .heading span {
+    font-size: 20px;
+  }
+  .main .filters .filtersMain .date {
+    margin-bottom: 20px;
+  }
+  .main .filters .filtersMain .date img {
+    display: inline-block;
+  }
+  .main .filters .filtersMain .date input[type=date] {
+    display: inline-block;
+    top: 30px;
+    left: 0;
+  }
 }/*# sourceMappingURL=Filter.module.css.map */

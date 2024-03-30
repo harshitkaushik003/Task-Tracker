@@ -32,4 +32,16 @@
   margin-left: 0;
   border-radius: 20px;
   position: relative;
+}
+
+@media screen and (max-width: 600px) {
+  .home {
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+  }
+  .home .left {
+    width: 50%;
+    height: 100%;
+  }
 }/*# sourceMappingURL=Home.module.css.map */

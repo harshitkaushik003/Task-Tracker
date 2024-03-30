@@ -29,4 +29,11 @@
   flex-direction: column;
   align-items: center;
   overflow: scroll;
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    min-height: 97%;
+    min-width: 80%;
+  }
 }/*# sourceMappingURL=Card.module.css.map */

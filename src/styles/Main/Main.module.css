@@ -32,4 +32,24 @@
   height: 80%;
   width: 100%;
   display: flex;
+}
+
+@media screen and (max-width: 600px) {
+  .main {
+    height: 100%;
+    overflow-y: scroll;
+  }
+  .main .header {
+    flex-direction: column;
+  }
+  .main .header .heading span {
+    font-size: 20px;
+  }
+  .main .header .addTask {
+    width: 30%;
+  }
+  .main .tasks {
+    height: auto;
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=Main.module.css.map */

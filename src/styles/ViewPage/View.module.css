@@ -26,4 +26,11 @@
   font-style: normal;
   font-size: 20px;
   margin-left: 30px;
+}
+
+@media screen and (max-width: 600px) {
+  .view {
+    overflow-y: hidden;
+    margin-top: 40px;
+  }
 }/*# sourceMappingURL=View.module.css.map */

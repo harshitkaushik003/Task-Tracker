@@ -91,4 +91,13 @@
 .Form .right .button:hover {
   transform: translateY(-4px);
   box-shadow: none;
+}
+
+@media screen and (max-width: 600px) {
+  .Form .left input[type=text] {
+    font-size: 12px;
+  }
+  .Form .right input[type=text] {
+    width: 60%;
+  }
 }/*# sourceMappingURL=Form.module.css.map */
