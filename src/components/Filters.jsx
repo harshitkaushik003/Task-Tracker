@@ -68,7 +68,7 @@ const Filters = () => {
                 <input ref={sdRef} type="date" name="" id="" onChange={handleChange}/>
                 <input ref={edRef} type="date" name="" id="" onChange={handleChange}/>
             </div>
-            <button onClick={handleReset}>Reset Filters</button>
+            <button className={styles.btn} onClick={handleReset}>Reset Filters</button>
         </div>
       </div>
       <div className={styles.sort}>

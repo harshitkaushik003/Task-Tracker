@@ -53,6 +53,20 @@
   left: 40px;
   top: 2px;
 }
+.main .filters .filtersMain .btn {
+  width: 150px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+}
+.main .sort label {
+  font-size: 20px;
+}
+.main .sort select {
+  margin-left: 10px;
+  width: 100px;
+  height: 30px;
+}
 
 @media screen and (max-width: 600px) {
   .main .filters .heading span {
